@@ -2,6 +2,7 @@
     height: auto;
     padding: 2em;
     line-height: 1.8;
+
 }
 
 .about-header {
@@ -27,13 +28,14 @@
 }
 
 .about-description {
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     text-align: justify;
     padding: 1em;
     font-size: 1em;
     border-radius: 1em;
     background: linear-gradient(90deg, #9b8bec49, #6b5bbc41);
     border: 1px solid #b49bff88;
+    z-index: 1000;
 }
 
 .about-description p {
@@ -60,19 +62,21 @@
 
 .about-experience {
     width: 100%;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     padding: 1em;
     font-size: 1em;
     border-radius: 1em;
     background: linear-gradient(90deg, #9b8bec49, #6b5bbc41);
     border: 1px solid #b49bff88;
-
+    z-index: 1000;
 }
 
 .experience-header {
     text-align: center;
-    font-size: 1.5vmax;
+    font-size: 1.2em;
     font-weight: 700;
+
+    margin-bottom: 0.5em;
 }
 
 .experience-tab-body {
@@ -106,16 +110,30 @@
     display: flex;
     align-items: center;
     gap: 0.2em;
+    position: relative;
 
+}
+
+.social-icon {
+    opacity: 0.8;
 }
 
 .social-link {
     cursor: pointer;
+    background: linear-gradient(to right, #f1ecff, #ffd3fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
 }
 
 .social-link:hover {
-    text-decoration: underline;
+    text-decoration: underline !important;
     opacity: 0.8;
+}
+
+.social-link a:hover {
+    text-decoration: underline !important;
+
 }
 
 .copy-icon {
@@ -127,11 +145,51 @@
     opacity: 0.8;
 }
 
+.experience-footer p {
+    background: linear-gradient(to right, #daceff, #ffd3fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.copy-tag {
+    position: absolute;
+    bottom: -3em;
+    right: 0.5em;
+    margin-left: 0.5em;
+    font-size: 0.8em;
+    color: #fcfcfc;
+    background-color: #201e2d;
+    padding: 0.2em 0.5em;
+    border-radius: 0.5em;
+    animation: fadeInOut 2s ease;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
 
 @media (max-width: 768px) {
 
     .about-content {
         flex-direction: column;
+    }
+
+    .about-header {
+        font-size: 3vmax;
     }
 
     .about-left {
@@ -140,6 +198,15 @@
 
     .about-right {
         width: 100%;
+    }
+
+    .social-body {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .experience-footer p {
+        font-size: 0.8em;
     }
 
 }

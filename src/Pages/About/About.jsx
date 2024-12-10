@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./About.css";
 import ExperienceTab from "../../components/ExperienceTab/ExperienceTab";
 import { BrandLiberty, KnorrBremse } from "../../assets/images/logos";
@@ -7,6 +7,8 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 
 const About = () => {
+  const [copiedIndex, setCopiedIndex] = useState(null);
+
   const experience = [
     {
       logo: BrandLiberty,
@@ -27,6 +29,39 @@ const About = () => {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, corrupti!",
     },
   ];
+
+  const socialLinks = [
+    {
+      icon: <FaLinkedin />,
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/sanjay-swapan-dutta/",
+    },
+    {
+      icon: <IoMdMail />,
+      name: "E-Mail",
+      link: "mailto:sanjaydutta978@gmail.com",
+    },
+    {
+      icon: <FaGithub />,
+      name: "GitHub",
+      link: "https://github.com/Sanjay-2001",
+    },
+  ];
+
+  const handleCopy = (index, link) => {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard
+        .writeText(link)
+        .then(() => {
+          setCopiedIndex(index);
+          setTimeout(() => setCopiedIndex(null), 2000); // Reset after 2 seconds
+        })
+        .catch(() => alert("Failed to copy!"));
+    } else {
+      alert("Clipboard not supported on this browser/device.");
+    }
+  };
+
   return (
     <div className="about-body" id="About Me">
       <div className="about-header">ABOUT ME</div>
@@ -69,21 +104,26 @@ const About = () => {
             <div className="experience-footer">
               <p>Let’s connect and create something amazing together!</p>
               <div className="social-body">
-                <div className="social">
-                  <FaLinkedin className="social-icon" />{" "}
-                  <span className="social-link">Linkedin</span>
-                  <MdContentCopy className="copy-icon" />
-                </div>
-                <div className="social">
-                  <IoMdMail className="social-icon" />
-                  <span className="social-link">E-Mail</span>
-                  <MdContentCopy className="copy-icon" />
-                </div>
-                <div className="social">
-                  <FaGithub className="social-icon" />
-                  <span className="social-link">Github</span>
-                  <MdContentCopy className="copy-icon" />
-                </div>
+                {socialLinks.map((social, index) => (
+                  <div className="social" key={index}>
+                    {social.icon}
+                    <a
+                      className="social-link"
+                      href={social.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {social.name}
+                    </a>
+                    <MdContentCopy
+                      className="copy-icon"
+                      onClick={() => handleCopy(index, social.link)}
+                    />
+                    {copiedIndex === index && (
+                      <span className="copy-tag">Copied!</span>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
           </div>

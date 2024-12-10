@@ -140,7 +140,7 @@
         align-items: flex-start;
         padding: 0.5em 1.5em;
         box-shadow: -13px 0 20px rgba(10, 1, 26, 0.637), inset 10px 0px 20px rgba(217, 189, 248, 0.027);
-        z-index: 10000;
+        z-index: 10000 !important;
         transition: transform 0.3s ease-in-out;
     }
 

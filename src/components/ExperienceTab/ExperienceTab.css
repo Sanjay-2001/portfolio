@@ -22,16 +22,17 @@
 }
 
 .experience-date {
-    font-size: 1vmax;
+    font-size: 0.7em;
     font-weight: 400;
     display: flex;
     align-items: center;
     gap: 0.3em;
+    opacity: 0.8;
 
 }
 
 .position-text {
-    font-weight: 500;
+    font-weight: 600;
     background: linear-gradient(to right, #f1ecff, #ffd3fe);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -41,12 +42,50 @@
     height: 5em;
     border-radius: 0.5em;
     border: 1px solid rgba(255, 255, 255, 0.237);
+    backdrop-filter: blur(20px);
 }
 
 .experience-description {
-    font-size: 1vmax;
+    font-size: 0.8em;
 
     background: linear-gradient(to right, #daceff, #ffd3fe);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+@media (max-width:768px) {
+
+    .experience-tab {
+        padding: 0.5em 0.7em;
+        display: flex;
+
+        gap: 1em;
+        background: linear-gradient(90deg, #9b8bec49, #6b5bbc41);
+        border: 1px solid #b49bff88;
+        border-radius: 0.8em;
+
+    }
+
+    .company-logo {
+        height: 3em;
+    }
+
+    .company-header {
+        font-size: 1em;
+    }
+
+    .position-text {
+        font-size: 0.8em;
+    }
+
+    .company-header {
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .experience-description {
+        font-size: 0.7em;
+
+    }
 }

@@ -6,7 +6,7 @@ import { About, Home, Projects, Skills } from "./Pages";
 function App() {
   return (
     <div>
-      <StarCanvas />
+      {/* <StarCanvas /> */}
       <Navbar />
       <Home />
       <Skills />

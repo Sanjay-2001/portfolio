@@ -1,0 +1,52 @@
+.experience-tab {
+    padding: 0.5em 1em;
+    display: flex;
+
+    gap: 1em;
+    background: linear-gradient(90deg, #9b8bec49, #6b5bbc41);
+    border: 1px solid #b49bff88;
+    border-radius: 0.8em;
+
+}
+
+.experience-right {
+    width: 100%;
+}
+
+.company-header {
+    margin-bottom: 0.2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.experience-date {
+    font-size: 1vmax;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+
+}
+
+.position-text {
+    font-weight: 500;
+    background: linear-gradient(to right, #f1ecff, #ffd3fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.company-logo {
+    height: 5em;
+    border-radius: 0.5em;
+    border: 1px solid rgba(255, 255, 255, 0.237);
+}
+
+.experience-description {
+    font-size: 1vmax;
+
+    background: linear-gradient(to right, #daceff, #ffd3fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

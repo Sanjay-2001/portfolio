@@ -1,10 +1,94 @@
 import React from "react";
 import "./About.css";
+import ExperienceTab from "../../components/ExperienceTab/ExperienceTab";
+import { BrandLiberty, KnorrBremse } from "../../assets/images/logos";
+import { MdContentCopy } from "react-icons/md";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
 
 const About = () => {
+  const experience = [
+    {
+      logo: BrandLiberty,
+      companyName: "Brand Liberty, Pune",
+      joinDate: "1 Jan 2022",
+      exitDate: "2 Feb 2023",
+      position: "Front-end Developer Intern",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, corrupti!",
+    },
+    {
+      logo: KnorrBremse,
+      companyName: "Knorr Bremse, Pune",
+      joinDate: "21 Nov 2023",
+      exitDate: "21 Nov 2024",
+      position: "Front-end Developer Apprentice",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, corrupti!",
+    },
+  ];
   return (
     <div className="about-body" id="About Me">
-      about
+      <div className="about-header">ABOUT ME</div>
+      <div className="about-content">
+        <div className="about-left">
+          <div className="about-description">
+            <p>
+              Hello! I'm <strong>Sanjay Swapan Dutta</strong>, a passionate and
+              dedicated <strong>Full-Stack Web Developer</strong> with a keen
+              interest in building dynamic, responsive and user-friendly web
+              applications.
+            </p>
+            <p>
+              With experience in both front-end and back-end technologies, I
+              strive to create seamless and efficient solutions that bridge
+              design with functionality. Whether it’s crafting sleek user
+              interfaces or engineering robust server-side systems, I approach
+              every project with a blend of creativity and technical expertise.
+            </p>
+          </div>
+        </div>
+        <div className="about-right">
+          <div className="about-experience">
+            <div>
+              <div className="experience-header">Experience</div>
+              <div className="experience-tab-body">
+                {experience.map((item, index) => (
+                  <ExperienceTab
+                    key={index}
+                    logo={item.logo}
+                    companyName={item.companyName}
+                    joinDate={item.joinDate}
+                    exitDate={item.exitDate}
+                    position={item.position}
+                    description={item.description}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="experience-footer">
+              <p>Let’s connect and create something amazing together!</p>
+              <div className="social-body">
+                <div className="social">
+                  <FaLinkedin className="social-icon" />{" "}
+                  <span className="social-link">Linkedin</span>
+                  <MdContentCopy className="copy-icon" />
+                </div>
+                <div className="social">
+                  <IoMdMail className="social-icon" />
+                  <span className="social-link">E-Mail</span>
+                  <MdContentCopy className="copy-icon" />
+                </div>
+                <div className="social">
+                  <FaGithub className="social-icon" />
+                  <span className="social-link">Github</span>
+                  <MdContentCopy className="copy-icon" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

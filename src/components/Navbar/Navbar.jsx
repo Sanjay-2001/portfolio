@@ -87,8 +87,11 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu Icon */}
-        <div className="mobile-menu" onClick={() => setMobileMenuOpen(true)}>
+        <div
+          className="mobile-menu"
+          style={{ opacity: mobileMenuOpen ? 0 : 1 }}
+          onClick={() => setMobileMenuOpen(true)}
+        >
           <IoMenu className="menu-icon" />
         </div>
       </div>

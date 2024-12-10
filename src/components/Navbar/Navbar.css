@@ -86,6 +86,12 @@
 }
 
 @media (max-width: 768px) {
+    .navbar-container {
+
+        backdrop-filter: blur(15px);
+        box-shadow: 0px 10 20px rgba(5, 3, 24, 0.91);
+    }
+
     .nav-box {
         width: 100%;
     }
@@ -124,15 +130,17 @@
         right: 0;
         width: 250px;
         height: 100vh;
-        background: #0b012998;
-        backdrop-filter: blur(10px);
+        background: linear-gradient(90deg, #382c5ce0, #211a36e0);
+        /* background: #211a36e0; */
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px);
         color: white;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         padding: 0.5em 1.5em;
-        box-shadow: -3px 0 20px rgba(5, 3, 24, 0.91), inset 8px 0px 20px rgba(255, 255, 255, 0.065);
-        z-index: 1001;
+        box-shadow: -13px 0 20px rgba(10, 1, 26, 0.637), inset 10px 0px 20px rgba(217, 189, 248, 0.027);
+        z-index: 10000;
         transition: transform 0.3s ease-in-out;
     }
 

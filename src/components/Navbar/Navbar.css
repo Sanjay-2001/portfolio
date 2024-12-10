@@ -1,0 +1,89 @@
+.navbar-container {
+
+    position: fixed;
+
+    z-index: 1000;
+    width: 100%;
+    padding: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-box {
+    border: 1px solid #b49bffb4;
+    backdrop-filter: blur(10px);
+    padding: 0.3em 1em;
+    border-radius: 2em;
+    width: 60%;
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow: 0 15px 20px #270980b4, inset 0 -5px 30px #a293ce3f;
+}
+
+.nav-left {
+    color: #fcfcfc;
+    font-weight: 700;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.nav-middle {
+    display: flex;
+    gap: 3em;
+}
+
+.nav-item {
+    color: #fcfcfccf;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #a289ee
+}
+
+.nav-active {
+    color: #b49bff
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.profile-container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img {
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+    backdrop-filter: blur(20px);
+    border: 1px solid #b49bffb4;
+    background-color: #7959d93e;
+}
+
+
+.icon-container {
+    color: #fcfcfc;
+
+    font-size: 1.5em;
+}
+
+@media (max-width: 768px) {
+    .nav-box {
+
+        width: 90%;
+    }
+
+}

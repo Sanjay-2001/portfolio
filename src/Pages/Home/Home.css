@@ -1,7 +1,7 @@
 .home-container {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     overflow: hidden;
     background-color: #030014;
 }
@@ -20,6 +20,7 @@
 
 .home-content {
     position: relative;
+    height: 100%;
     z-index: 1;
 
     color: #fff;
@@ -34,12 +35,14 @@
 
 .home-left {
     width: 60%;
+    height: 100%;
+
     display: flex;
     flex-direction: column;
     z-index: 10;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: flex-start;
-    margin: 0 1em;
+    padding: 2em 2em;
 
 }
 
@@ -56,8 +59,10 @@
     display: flex;
     align-items: center;
     gap: 0.3em;
-    margin-bottom: 2em;
+    /* margin-bottom: 2em; */
     box-shadow: inset 0 0 10px #271e535d;
+    animation: slide-in-from-top 1s ease-in-out forwards;
+
 }
 
 .sparkle-icon {
@@ -65,24 +70,39 @@
 }
 
 .content-body {
-    margin-top: 10em;
-    width: 80%;
+
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 1em;
+    height: 100%;
+
+}
+
+.left-top {
+    height: 50%;
+    display: flex;
+    align-items: flex-end;
+    padding: 1em 0;
+}
+
+.left-bottom {
+    height: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
 }
 
 .content-title {
-    font-size: 4em;
+    font-size: 4vmax;
     font-weight: 700;
-    /* padding: 0 1em; */
     display: flex;
     justify-content: flex-start;
-    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.573); */
     display: flex;
-    backdrop-filter: box-shadow(2px 2px 4px black);
-
+    animation: slide-in 2s ease forwards;
+    animation-name: slide-in-from-left;
 }
 
 .highlight-text {
@@ -92,9 +112,32 @@
 }
 
 .content-description {
+    margin-top: 0.5em;
     font-size: 400;
-    font-size: 1.2em;
-    opacity: 0.7;
+    font-size: 1.2vmax;
+    color: #b5b7c0;
+    animation: slide-in-from-left 2s ease forwards;
+
+}
+
+.contact-button-body {
+    padding: 1em 0;
+}
+
+.contact-button {
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.8em 3em;
+    cursor: pointer;
+    color: #fcfcfc;
+    font-weight: 400;
+    background: linear-gradient(180deg, #3c087e00, #3c087e6b), #712fff3d;
+    box-shadow: inset 0 0 12px #bf97ff70;
+    animation: slide-in-from-left 2s ease forwards;
+}
+
+.contact-button:hover {
+    box-shadow: inset 0 0 18px #cdafff70;
 }
 
 .home-right {
@@ -106,38 +149,107 @@
 
 .hero-image {
     height: 80%;
+    animation: slide-in-from-right 2s ease forwards;
+
+}
+
+
+
+
+@keyframes slide-in-from-top {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-from-left {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes slide-in-from-right {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 
 @media (max-width: 768px) {
+
+
+
     .background-video {
         object-fit: contain;
         transform: scale(2);
+        margin-top: -7em;
     }
 
     .home-content {
         flex-direction: column;
+        margin-top: -7em;
     }
 
     .home-left {
         width: 100%;
         position: absolute;
+        height: auto;
+        top: 55dvh;
+        padding: 1em 1em;
+    }
 
-        top: -3em;
+    .content-body {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1em;
+        height: 100%;
 
     }
+
+    .content-tag {
+
+        background: linear-gradient(to right, #ddd2ff, #ffd7fe);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
+
 
     .content-title {
-        font-size: 2.5em;
+        font-size: 4vmax;
     }
 
-    .home-left {
 
-        margin: 0 0.5em;
+    .content-description {
+
+        font-size: 2vmax;
+
     }
 
     .home-right {
         width: 100%;
+        height: 100%;
         justify-content: center;
         position: relative;
         z-index: -10;

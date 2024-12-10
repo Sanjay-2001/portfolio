@@ -62,8 +62,12 @@
     /* margin-bottom: 2em; */
     box-shadow: inset 0 0 10px #271e535d;
     animation: slide-in-from-top 1s ease-in-out forwards;
+    position: relative;
 
 }
+
+
+
 
 .sparkle-icon {
     color: #B49BFF;
@@ -135,6 +139,7 @@
     box-shadow: inset 0 0 12px #bf97ff70;
     animation: slide-in-from-left 2s ease forwards;
 }
+
 
 .contact-button:hover {
     box-shadow: inset 0 0 18px #cdafff70;

@@ -1,0 +1,152 @@
+.home-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #030014;
+}
+
+.background-video {
+    position: absolute;
+    /* top: -49%; */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    /* rotate: 180deg; */
+
+}
+
+.home-content {
+    position: relative;
+    z-index: 1;
+
+    color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    width: 100%;
+
+
+    padding: 0 2em;
+}
+
+.home-left {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 1em;
+
+}
+
+.content-tag {
+    background-color: #6b5bbc41;
+    background: linear-gradient(to right, #B49BFF, #ff9bfc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0.5em 1em;
+    border-radius: 2em;
+    border: 1px solid #B49BFF;
+    backdrop-filter: blur(15px);
+
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    margin-bottom: 2em;
+    box-shadow: inset 0 0 10px #271e535d;
+}
+
+.sparkle-icon {
+    color: #B49BFF;
+}
+
+.content-body {
+    margin-top: 10em;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+.content-title {
+    font-size: 4em;
+    font-weight: 700;
+    /* padding: 0 1em; */
+    display: flex;
+    justify-content: flex-start;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.573); */
+    display: flex;
+    backdrop-filter: box-shadow(2px 2px 4px black);
+
+}
+
+.highlight-text {
+    background: linear-gradient(to right, #8336ef, #08c4ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.content-description {
+    font-size: 400;
+    font-size: 1.2em;
+    opacity: 0.7;
+}
+
+.home-right {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.hero-image {
+    height: 80%;
+}
+
+
+@media (max-width: 768px) {
+    .background-video {
+        object-fit: contain;
+        transform: scale(2);
+    }
+
+    .home-content {
+        flex-direction: column;
+    }
+
+    .home-left {
+        width: 100%;
+        position: absolute;
+
+        top: -3em;
+
+    }
+
+    .content-title {
+        font-size: 2.5em;
+    }
+
+    .home-left {
+
+        margin: 0 0.5em;
+    }
+
+    .home-right {
+        width: 100%;
+        justify-content: center;
+        position: relative;
+        z-index: -10;
+    }
+
+    .hero-image {
+        height: auto;
+        width: 100%;
+        object-fit: fill;
+    }
+
+}

@@ -13,20 +13,20 @@ const About = () => {
     {
       logo: BrandLiberty,
       companyName: "Brand Liberty, Pune",
-      joinDate: "1 Jan 2022",
-      exitDate: "2 Feb 2023",
+      joinDate: "Jul 2023",
+      exitDate: "Sep 2023 . 3 mos",
       position: "Front-end Developer Intern",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, corrupti!",
+        "Developed a responsive banking website and the front-end of a WhatsApp status creator app using React Native.",
     },
     {
       logo: KnorrBremse,
       companyName: "Knorr Bremse, Pune",
-      joinDate: "21 Nov 2023",
-      exitDate: "21 Nov 2024",
+      joinDate: "Nov 2023",
+      exitDate: "Nov 2024 . 1 yr",
       position: "Front-end Developer Apprentice",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, corrupti!",
+        "Delivered six advanced web applications, automated CI/CD pipelines and enhanced UI/UX using React and .NET.",
     },
   ];
 

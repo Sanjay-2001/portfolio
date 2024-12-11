@@ -11,7 +11,7 @@
     font-size: 2vmax;
     font-weight: bold;
 
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 
 .about-content {
@@ -36,6 +36,9 @@
     background: linear-gradient(90deg, #9b8bec49, #6b5bbc41);
     border: 1px solid #b49bff88;
     z-index: 1000;
+    animation: appear2 5s linear;
+    animation-timeline: view();
+    animation-range: entry cover 30%;
 }
 
 .about-description p {
@@ -69,6 +72,9 @@
     background: linear-gradient(90deg, #9b8bec49, #6b5bbc41);
     border: 1px solid #b49bff88;
     z-index: 1000;
+    animation: appear2 5s linear;
+    animation-timeline: view();
+    animation-range: entry cover 30%;
 }
 
 .experience-header {
@@ -161,7 +167,7 @@
     background-color: #201e2d;
     padding: 0.2em 0.5em;
     border-radius: 0.5em;
-    animation: fadeInOut 2s ease;
+    animation: fadeInOut 5s ease;
 }
 
 @keyframes fadeInOut {
@@ -181,6 +187,28 @@
         opacity: 0;
     }
 }
+
+@keyframes appear2 {
+    from {
+        opacity: 0;
+        scale: 0.5;
+        /* transform: translateX(-100px); */
+        /* clip-path: inset(100% 100% 0 0); */
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+        /* transform: translate(0px); */
+        /* clip-path: inset(0 0 0 0); */
+
+    }
+
+}
+
+
+
+
 
 @media (max-width: 768px) {
 
